@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
+import { FaHome } from "react-icons/fa";
 import {
   MdPerson,
   MdShoppingCart,
@@ -9,7 +9,8 @@ import {
   MdDeveloperBoard,
 } from "react-icons/md";
 import { GiTripleCorn } from "react-icons/gi";
-
+import { AiFillDashboard } from "react-icons/ai";
+import { TbLogout } from "react-icons/tb";
 const Sidebar = ({ children }) => {
   return (
     <div className="flex">
@@ -26,7 +27,12 @@ const Sidebar = ({ children }) => {
           {/* Sidebar Items */}
           <Link href="/">
             <div className="my-4 inline-block cursor-pointer rounded-lg bg-slate-100 p-3 text-slate-600 hover:bg-gray-300">
-              <MdPoll size={22} />
+              <FaHome size={22} />
+            </div>
+          </Link>
+          <Link href="/dashboard">
+            <div className="my-4 inline-block cursor-pointer rounded-lg bg-slate-100 p-3 text-slate-600 hover:bg-gray-300">
+              <AiFillDashboard size={22} />
             </div>
           </Link>
           <Link href="/customers">
@@ -43,6 +49,11 @@ const Sidebar = ({ children }) => {
           <Link href="/settings">
             <div className="my-4 inline-block cursor-pointer rounded-lg bg-slate-100 p-3 text-slate-600 hover:bg-gray-300">
               <MdSettings size={22} />
+            </div>
+          </Link>
+          <Link href="/logout">
+            <div className="my-4 inline-block cursor-pointer rounded-lg bg-slate-100 p-3 text-slate-600 hover:bg-gray-300">
+              <TbLogout size={22} />
             </div>
           </Link>
         </div>
