@@ -1,6 +1,4 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Footer from "@/components/Footer";
 import ReadyToGrowBusiness from "@/components/ReadyToGrowBusiness";
 import CustomerStarts from "@/components/CustomerStarts";
 import MarketAnalysis from "@/components/MarketAnalysis";
@@ -20,7 +18,6 @@ export default function Home() {
           <CustomerStarts />
           <ReadyToGrowBusiness />
       </main>
-      <Footer />
     </>
   );
 }

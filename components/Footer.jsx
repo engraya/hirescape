@@ -24,12 +24,12 @@ function Footer() {
         </div>
         <div className="p-5">
           <div className="text-sm uppercase text-[#0EA5E9] font-bold">Contact Us</div>
-          <a className="my-3 block" href="/#">1234 Hiring St, San Francisco, CA</a>
+          <a className="my-3 block" href="/#">1234 Hiring St, Nigeria, NGA</a>
           <a className="my-3 block" href="mailto:contact@hirescape.com">contact@hirescape.com</a>
         </div>
       </div>
-      <div className="flex justify-center items-center mx-auto my-5 text-center text-gray-600">
-        © 2025 Hirescape. All Rights Reserved.
+      <div className="flex justify-center items-center mx-auto text-center text-gray-600">
+        © {new Date().getFullYear()} Hirescape. All Rights Reserved.
       </div>
     </footer>
   );

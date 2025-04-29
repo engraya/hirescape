@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-
+import Footer from "@/components/Footer";
 // Create a React Query Client instance
 const queryClient = new QueryClient();
 
@@ -23,6 +23,7 @@ export default function App({ Component, pageProps }) {
           <>
             <Navbar />
             <Component {...pageProps} />
+            <Footer />
           </>
         ) : (
           <Sidebar>
