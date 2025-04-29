@@ -9,6 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { mockJobs } from "@/mockData/mockJobs";
 
 ChartJS.register(
   BarElement,
@@ -20,43 +21,41 @@ ChartJS.register(
 );
 
 const BarChart = () => {
-  const [chartData, setChartData] = useState({
-    datasets: [],
-  });
+  const [chartData, setChartData] = useState({ datasets: [] });
   const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
     setChartData({
-      labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      labels: mockJobs.map((job) => job.title),
       datasets: [
         {
-          label: "Sales $",
-          data: [8514, 11255, 9885, 15554, 28551, 26318, 21579],
-          borderColor: "#F1F5F9",
-          backgroundColor: "#3482F6",
+          label: "Applicants",
+          data: mockJobs.map((job) => job.applicants),
+          backgroundColor: "#0EA5E9", // sky-500
+          borderRadius: 6,
         },
       ],
     });
+
     setChartOptions({
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: {
           position: "top",
         },
         title: {
           display: true,
-          text: "Daily Revenue",
+          text: "Applicants per Job Role",
         },
       },
-      maintainAspectRatio: false,
-      responsive: true,
     });
   }, []);
+
   return (
-    <>
-      <div className="bh-white m-auto h-[50vh] w-full rounded-lg border p-4 md:col-span-2 lg:h-[70vh]">
-        <Bar data={chartData} options={chartOptions} />
-      </div>
-    </>
+    <div className="bg-white m-auto h-[50vh] w-full rounded-lg border p-4 md:col-span-2 lg:h-[70vh]">
+      <Bar data={chartData} options={chartOptions} />
+    </div>
   );
 };
 

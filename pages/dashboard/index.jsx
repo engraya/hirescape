@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Header, TopCards, BarChart, RecentOrders } from "@/components";
+import { Header, TopCards, BarChart, RecentJobs } from "@/components";
 
 function Dashboard() {
   return (
@@ -9,7 +9,7 @@ function Dashboard() {
         <TopCards />
         <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-3">
           <BarChart />
-          <RecentOrders />
+          <RecentJobs />
         </div>
     </main>
     </>

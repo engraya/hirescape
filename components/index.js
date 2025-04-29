@@ -2,6 +2,6 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import TopCards from "./TopCards";
 import BarChart from "./BarChart";
-import RecentOrders from "./RecentOrders";
+import RecentJobs from "./RecentJobs";
 
-export { Header, Sidebar, TopCards, BarChart, RecentOrders };
+export { Header, Sidebar, TopCards, BarChart, RecentJobs };

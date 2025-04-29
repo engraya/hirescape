@@ -1,4 +1,3 @@
-// Customers data
 export const mockData = [
   {
     id: 1,
@@ -7,10 +6,10 @@ export const mockData = [
       last: "Broski",
     },
     email: "david.broski@example.com",
-    total: 955.0,
-    status: "Completed",
-    method: "Payoneer",
-    date: "3 Minutes ago",
+    createdAt: "2024-12-01",
+    nationality: "USA",
+    createdJobs: 12,
+    appliedJobs: 5,
   },
   {
     id: 2,
@@ -19,12 +18,11 @@ export const mockData = [
       last: "Nguyen",
     },
     email: "maggie.nguyen@example.com",
-    total: 2450.5,
-    status: "Pending",
-    method: "Credit Card",
-    date: "1 Hour ago",
+    createdAt: "2024-11-21",
+    nationality: "Vietnam",
+    createdJobs: 4,
+    appliedJobs: 9,
   },
-
   {
     id: 3,
     name: {
@@ -32,12 +30,11 @@ export const mockData = [
       last: "Gonzalez",
     },
     email: "gabriel.gonzalez@example.com",
-    total: 1075.95,
-    status: "Completed",
-    method: "PayPal",
-    date: "5 Minutes ago",
+    createdAt: "2024-10-03",
+    nationality: "Mexico",
+    createdJobs: 7,
+    appliedJobs: 12,
   },
-
   {
     id: 4,
     name: {
@@ -45,12 +42,11 @@ export const mockData = [
       last: "Lee",
     },
     email: "samantha.lee@example.com",
-    total: 640.0,
-    status: "Refunded",
-    method: "Bank Transfer",
-    date: "1 Day ago",
+    createdAt: "2024-08-15",
+    nationality: "Canada",
+    createdJobs: 3,
+    appliedJobs: 2,
   },
-
   {
     id: 5,
     name: {
@@ -58,12 +54,11 @@ export const mockData = [
       last: "Chen",
     },
     email: "daniel.chen@example.com",
-    total: 455.25,
-    status: "Completed",
-    method: "Stripe",
-    date: "10 Minutes ago",
+    createdAt: "2024-07-30",
+    nationality: "Taiwan",
+    createdJobs: 11,
+    appliedJobs: 7,
   },
-
   {
     id: 6,
     name: {
@@ -71,12 +66,11 @@ export const mockData = [
       last: "Williams",
     },
     email: "avery.williams@example.com",
-    total: 435.99,
-    status: "Pending",
-    method: "PayPal",
-    date: "1 Hour ago",
+    createdAt: "2024-09-11",
+    nationality: "UK",
+    createdJobs: 6,
+    appliedJobs: 3,
   },
-
   {
     id: 7,
     name: {
@@ -84,12 +78,11 @@ export const mockData = [
       last: "Martinez",
     },
     email: "oliver.martinez@example.com",
-    total: 1220.0,
-    status: "Completed",
-    method: "Credit Card",
-    date: "15 Minutes ago",
+    createdAt: "2024-06-22",
+    nationality: "Spain",
+    createdJobs: 2,
+    appliedJobs: 14,
   },
-
   {
     id: 8,
     name: {
@@ -97,12 +90,11 @@ export const mockData = [
       last: "Garcia",
     },
     email: "sophia.garcia@example.com",
-    total: 575.0,
-    status: "Failed",
-    method: "Payoneer",
-    date: "2 Hours ago",
+    createdAt: "2024-12-05",
+    nationality: "Argentina",
+    createdJobs: 0,
+    appliedJobs: 8,
   },
-
   {
     id: 9,
     name: {
@@ -110,12 +102,11 @@ export const mockData = [
       last: "Liu",
     },
     email: "jacob.liu@example.com",
-    total: 880.75,
-    status: "Completed",
-    method: "Bank Transfer",
-    date: "30 Minutes ago",
+    createdAt: "2024-11-10",
+    nationality: "Singapore",
+    createdJobs: 5,
+    appliedJobs: 10,
   },
-
   {
     id: 10,
     name: {
@@ -123,9 +114,9 @@ export const mockData = [
       last: "Wong",
     },
     email: "isabella.wong@example.com",
-    total: 135.5,
-    status: "Refunded",
-    method: "Stripe",
-    date: "2 Days ago",
+    createdAt: "2024-10-18",
+    nationality: "Malaysia",
+    createdJobs: 8,
+    appliedJobs: 6,
   },
 ];
