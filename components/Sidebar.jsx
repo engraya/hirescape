@@ -37,10 +37,9 @@ const Sidebar = ({ children }) => {
     { href: "/", icon: <FaHome size={22} /> },
     { href: "/dashboard", icon: <AiFillDashboard size={22} /> },
     { href: "/users", icon: <HiUsers size={22} /> },
-    { href: "/create", icon: <MdAddChart size={22} /> },
+    { href: "/jobs", icon: <MdAddChart size={22} /> },
     { href: "/createdjobs", icon: <MdWork size={22} /> },
     { href: "/applied", icon: <FaNetworkWired size={22} /> },
-    { href: "/profile", icon: <FaRegUser size={22} /> },
     { href: "/logout", icon: <TbLogout size={22} /> },
   ];
 

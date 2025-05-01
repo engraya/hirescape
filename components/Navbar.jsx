@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { useUser } from '@/context/userContext';
 import { toast } from "react-toastify";
+import { TbLogout } from "react-icons/tb";
+
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useUser(); 
@@ -15,7 +18,6 @@ function Navbar() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '#', label: 'About' },
-    { href: '#', label: 'Jobs' },
     ...(user ? [{ href: '/dashboard', label: 'Dashboard' }] : []),
   ];
 
@@ -125,14 +127,7 @@ function Navbar() {
                 {user.user?.firstName?.charAt(0).toUpperCase()} {/* Show the first letter of the user's first name */}
                 </div>
                 <span className='text-base font-bold'>{user.user.firstName}</span>
-                <button
-                  className="py-2 px-4 text-sm bg-red-600 hover:bg-red-800 rounded text-white"
-                  onClick={handleLogout}
-                >
-                  <span className="font-semibold">
-                    Logout
-                  </span>
-                </button>
+                <TbLogout className="text-gray-500 cursor-pointer hover:text-gray-700" size={24} onClick={handleLogout} />
               </div>
             ) : (
               <Link href="/login">

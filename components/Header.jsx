@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 const Header = () => {
     const { user, logout } = useUser(); 
+    console.log("User",user);
     const router = useRouter();
 
       const handleLogout = () => {
