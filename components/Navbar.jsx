@@ -124,9 +124,9 @@ function Navbar() {
             {user ? (
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-[#0EA5E9] text-white rounded-full flex items-center justify-center">
-                {user.user?.firstName?.charAt(0).toUpperCase()} {/* Show the first letter of the user's first name */}
+                {user?.user?.firstName?.charAt(0).toUpperCase()} 
                 </div>
-                <span className='text-base font-bold'>{user.user.firstName}</span>
+                <span className='text-base font-bold'>{user?.user?.firstName}</span>
                 <TbLogout className="text-gray-500 cursor-pointer hover:text-gray-700" size={24} onClick={handleLogout} />
               </div>
             ) : (

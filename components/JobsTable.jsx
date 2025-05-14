@@ -6,22 +6,28 @@ import ApplyJobModal from './Modals/ApplyJobModal';
 import { useUser } from "@/context/userContext";
 import { toast } from "react-toastify";
 import { MdVerified } from "react-icons/md";
+import CreateJobModal from './Modals/CreateJobModal';
+import { useRouter } from 'next/router';
+import { debounce } from "lodash";
+
+
 function JobsTable() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const { user } = useUser(); // Adjust if your auth context is different
+  const { user } = useUser();
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
-
+  const router = useRouter();
+  const [currentPage, setCurrentPage] = useState(1);
+  const jobsPerPage = 8;
+  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAddJobModalOpen, setIsAddJobModalOpen] = useState(false);
   const [selectedJobId, setSelectedJobId] = useState(null);
   const [applyLoading, setApplyLoading] = useState(false);
-
   const [selectedJob, setSelectedJob] = useState(null);
-
-
   const [appliedJobIds, setAppliedJobIds] = useState([]);
-
+  const [searchTerm, setSearchTerm] = useState("");
 
   const fetchJobs = useCallback(async () => {
     try {
@@ -43,9 +49,6 @@ function JobsTable() {
   useEffect(() => {
     fetchJobs();
   }, [fetchJobs]);
-
-
-
 
   const handleApply = async () => {
     if (!selectedJobId) return;
@@ -87,12 +90,38 @@ function JobsTable() {
     fetchJobs();
   }, [fetchJobs]);
 
+  const redirectToCreateJob = () => {
+    router.push("/createjob");
+  }
+
 
   const handleCloseModal = () => {
     setIsModalOpen(false); 
   };
 
+  const debouncedSetSearchTerm = useCallback(
+    debounce((value) => {
+      setSearchTerm(value);
+    }, 300),
+    []
+  );
 
+  const filteredJobs = jobs.filter(job =>
+    job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    job.company?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    job.location?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    job.industry?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  
+  // Pagination logic
+  const indexOfLastJob = currentPage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
+  
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm]);
+  
   return (
  <div className="w-full flex items-center justify-center min-h-full px-4 pt-4">
       <div className="container">
@@ -105,9 +134,12 @@ function JobsTable() {
                 <p className="text-gray-500 mt-1">Browse and manage open positions available on the HireScape platform.</p>
               </div>
               <div className="mt-4 md:mt-0">
-                <button className="bg-[#0EA5E9] hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-150 ease-in-out">
-                  Add Job
-                </button>
+              <button
+                onClick={redirectToCreateJob}
+                className="bg-[#0EA5E9] hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-150 ease-in-out"
+              >
+                Add Job
+              </button>
               </div>
             </div>
             {/* Search and Filter */}
@@ -118,7 +150,13 @@ function JobsTable() {
                     <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <input type="text" className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg w-full" placeholder="Search Jobs..." />
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => debouncedSetSearchTerm(e.target.value)}
+                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg w-full"
+                  placeholder="Search Jobs..."
+                />
               </div>
             </div>
           </div>
@@ -164,7 +202,7 @@ function JobsTable() {
                     </td>
                   </tr>
                 ) : (
-                  jobs.map(job => (
+                  currentJobs.map(job => (
                     <tr key={job._id} className="hover:bg-gray-50 transition-colors duration-150">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
@@ -215,7 +253,7 @@ function JobsTable() {
                             className="bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-1 px-2 rounded"
                             onClick={() => {
                               setSelectedJob(job);
-                              setSelectedJobId(job._id); // <-- Add this line
+                              setSelectedJobId(job._id);
                               setIsModalOpen(true);
                             }}
                           >
@@ -231,10 +269,19 @@ function JobsTable() {
             </table>
           </div>
           {/* Pagination */}
-          <Pagination />
+          <Pagination
+            currentPage={currentPage}
+            totalJobs={filteredJobs.length}
+            jobsPerPage={jobsPerPage}
+            onPageChange={(page) => setCurrentPage(page)}
+          />
         </div>
       </div>
-      
+      <CreateJobModal
+        isOpen={isAddJobModalOpen}
+        onClose={() => setIsAddJobModalOpen(false)}
+        onJobCreated={fetchJobs}
+      />
       {/* ApplyJob Modal */}
       <ApplyJobModal
         isOpen={isModalOpen}
