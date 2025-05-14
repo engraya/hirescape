@@ -2,18 +2,18 @@ import { AiFillDelete } from "react-icons/ai";
 import { useState, useEffect, useCallback } from "react";
 import { GiShoppingBag } from "react-icons/gi";
 import { MdVerified } from "react-icons/md";
-import { getUserAppliedJobs } from "@/lib/api"; // Assuming it's correctly defined
+import { getUserAppliedJobs } from "@/lib/api"; 
 import { useUser } from "@/context/userContext";
 import DeleteJobModal from "@/components/Modals/DeleteJobModal";
 import { deleteAppliedJobByUser } from "@/lib/api";
 import { toast } from "react-toastify";
 function AppliedJobs() {
-  const { user } = useUser(); // Adjust if your auth context is different
+  const { user } = useUser();
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false); 
   const [selectedJobId, setSelectedJobId] = useState(null);
   const [deleteLoading, setDeleteLoading] = useState(false);
 

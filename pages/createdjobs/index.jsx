@@ -1,15 +1,15 @@
 import { useState, useEffect, useCallback } from "react";
 import { GiShoppingBag } from "react-icons/gi";
 import { MdVerified } from "react-icons/md";
-import { getUserCreatedJobs } from "@/lib/api"; // Assuming it's correctly defined
+import { getUserCreatedJobs } from "@/lib/api"; 
 import { useUser } from "@/context/userContext";
 import { AiFillDelete } from "react-icons/ai";
 import DeleteJobModal from "@/components/Modals/DeleteJobModal";
 import { toast } from "react-toastify";
-import { deleteCreatedJobByUser } from "@/lib/api"; // Make sure this API handler exists and deletes a created job
+import { deleteCreatedJobByUser } from "@/lib/api";
 
 const CreatedJobs = () => {
-  const { user } = useUser(); // Adjust if your auth context is different
+  const { user } = useUser(); 
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
