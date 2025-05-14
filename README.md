@@ -25,13 +25,13 @@ Hirescape is a powerful, full-stack job management platform designed to make job
 
 ## <a name="features">🔋 Features</a>
 
--📝 Job Management – Effortlessly create, update, and manage job listings.
--🔒 Authentication – Secure user registration and login.
--🔍 Advanced Search & Filtering – Easily search and filter job listings by categories, location, type, and more.
--📊 Responsive Dashboard – Track job listings, manage user activity, and gain insights into platform usage.
--💡 Sleek UI – Clean, user-friendly interface built with Tailwind CSS for both mobile and desktop views.
--🔄 Pagination – Efficient pagination for job listings to enhance performance and usability.
--📱 Mobile-Responsive – Optimized for all device sizes, ensuring smooth functionality everywhere.
+- 📝 Job Management – Effortlessly create, update, and manage job listings.
+- 🔒 Authentication – Secure user registration and login.
+- 🔍 Advanced Search & Filtering – Easily search and filter job listings by categories, location, type, and more.
+- 📊 Responsive Dashboard – Track job listings, manage user activity, and gain insights into platform usage.
+- 💡 Sleek UI – Clean, user-friendly interface built with Tailwind CSS for both mobile and desktop views.
+- 🔄 Pagination – Efficient pagination for job listings to enhance performance and usability.
+- 📱 Mobile-Responsive – Optimized for all device sizes, ensuring smooth functionality everywhere.
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
@@ -110,19 +110,19 @@ src/
 
 ## <a name="usage">🎨 How it Works</a>
 
-1.User Authentication: Users can securely sign up and log in with JWT tokens for session management.
-2.Job Listings: Create and manage job listings with ease. Users can update and delete listings from their dashboard.
-3.Dashboard: The dashboard provides a quick overview of job listings, along with easy navigation for posting new jobs, viewing existing ones, and monitoring applications.
-4.Search & Filtering: Users can search for jobs by keyword, location, and category, and apply advanced filters to narrow down results.
-5.Pagination: Pagination ensures that large job listings are efficiently displayed in smaller chunks for faster page load times.
+1. User Authentication: Users can securely sign up and log in with JWT tokens for session management.
+2. Job Listings: Create and manage job listings with ease. Users can update and delete listings from their dashboard.
+3. Dashboard: The dashboard provides a quick overview of job listings, along with easy navigation for posting new jobs, viewing existing ones, and monitoring applications.
+4. Search & Filtering: Users can search for jobs by keyword, location, and category, and apply advanced filters to narrow down results.
+5. Pagination: Pagination ensures that large job listings are efficiently displayed in smaller chunks for faster page load times.
 
 
 ## <a name="usage">🔥 Future Enhancements</a>
 
--🔴 Real-time Notifications – Get real-time updates when new job applications or listings are posted.
--📊 Admin Analytics – Admin dashboard to track site usage, popular jobs, and application trends.
--🧑‍🤝‍🧑 User Roles and Permissions – Add user roles (admin, recruiter, job seeker) with customized access controls.
--💬 Job Seeker Messaging – Direct messaging between recruiters and job seekers.
+- 🔴 Real-time Notifications – Get real-time updates when new job applications or listings are posted.
+- 📊 Admin Analytics – Admin dashboard to track site usage, popular jobs, and application trends.
+- 🧑‍🤝‍🧑 User Roles and Permissions – Add user roles (admin, recruiter, job seeker) with customized access controls.
+- 💬 Job Seeker Messaging – Direct messaging between recruiters and job seekers.
 
 
 ## <a name="usage">🤝 Contributing</a>
@@ -138,12 +138,12 @@ Contributions are welcome! To contribute:
 
 ## <a name="usage">🙌 Acknowledgments</a>
 
--React.js for its flexible component-based architecture.
--Next.js for server-side rendering and building static pages.
--Tailwind CSS for beautiful, responsive design.
--MongoDB for scalable, flexible data storage.
--Vercel and AWS for fast and reliable cloud hosting.
--JWT for secure and stateless authentication.
+- React.js for its flexible component-based architecture.
+- Next.js for server-side rendering and building static pages.
+- Tailwind CSS for beautiful, responsive design.
+- MongoDB for scalable, flexible data storage.
+- Vercel and AWS for fast and reliable cloud hosting.
+- JWT for secure and stateless authentication.
 
 
 ## <a name="usage">🌐 Deployment</a>
