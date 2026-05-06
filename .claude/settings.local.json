@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Ahmad\\\\Frontend\\\\hirescape\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(git -C \"c:\\\\Users\\\\Ahmad\\\\Frontend\\\\hirescape\" log --oneline -10)",
+      "Bash(npm uninstall *)",
+      "Bash(npm install *)",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\Ahmad\\\\Frontend\\\\hirescape\\\\src\\\\app\")",
+      "Bash(npx shadcn@latest add button card input label select badge dialog sheet tabs tooltip skeleton separator alert-dialog progress textarea --yes)",
+      "Bash(npx tsc *)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/next/package.json'\\).version\\)\")",
+      "Bash(npm run *)"
+    ]
+  }
+}
