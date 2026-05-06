@@ -16,7 +16,7 @@ export function useAuth() {
     mutationFn: (data: LoginFormData) =>
       api.post<AuthResponse>('/auth/login', data).then((r) => r.data),
     onSuccess: (data) => {
-      setUser(data.user)
+      setUser(data.user, data.token)
       toast.success('Welcome back!')
       router.push('/jobs')
     },

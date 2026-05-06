@@ -10,7 +10,11 @@
       "Bash(npx shadcn@latest add button card input label select badge dialog sheet tabs tooltip skeleton separator alert-dialog progress textarea --yes)",
       "Bash(npx tsc *)",
       "Bash(node -e \"console.log\\(require\\('./node_modules/next/package.json'\\).version\\)\")",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(xargs grep -l \"Authorization\\\\|Bearer\\\\|token\")",
+      "Bash(xargs grep -l \"hydrate\\\\|rehydrate\")",
+      "Bash(xargs grep -l \"useAuthStore\\\\|useEffect.*auth\")",
+      "Bash(xargs grep -l \"401\\\\|unauthorized\\\\|handleError\")"
     ]
   }
 }

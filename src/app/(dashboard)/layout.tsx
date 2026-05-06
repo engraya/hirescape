@@ -1,26 +1,21 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuthStore } from '@/store/authStore'
 import Sidebar from '@/components/shared/Sidebar'
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
-  const { isAuthenticated } = useAuthStore()
-  const [hydrated, setHydrated] = useState(false)
+  const { isAuthenticated, _hasHydrated } = useAuthStore()
 
   useEffect(() => {
-    setHydrated(true)
-  }, [])
-
-  useEffect(() => {
-    if (hydrated && !isAuthenticated) {
+    if (_hasHydrated && !isAuthenticated) {
       router.replace('/login')
     }
-  }, [hydrated, isAuthenticated, router])
+  }, [_hasHydrated, isAuthenticated, router])
 
-  if (!hydrated) return null
+  if (!_hasHydrated) return null
   if (!isAuthenticated) return null
 
   return (
